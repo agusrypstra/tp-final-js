@@ -1,0 +1,35 @@
+[
+    {"id": 1,
+    "name": "Mouse de juego Logitech G Series Lightsync G203 azul",
+    "price": 3343,
+    "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
+    "type": "accessory",
+    "stock": 10,
+    "img": "img/1.jpg"
+    },
+    {"id": 2,
+    "name": "Mouse de juego Logitech G Series Lightsync G203 blanco",
+    "price": 3459,
+    "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
+    "type": "accessory",
+    "stock": 8,
+    "img": "img/2.jpg"
+    },
+    {"id": 3,
+    "name": "Mouse de juego Redragon Griffin M607 negro",
+    "price": 3466,
+    "description": "Con más de 20 años de experiencia en fabricación de productos, Redragon innova día a día en diseño y calidad. Su objetivo es producir equipamiento de alta gama para jugadores, con excelentes prestaciones y a un precio accesible. Los mouses Redragon son adecuados para todas las ocasiones, ya sea para entretenerse en el hogar o usarlo en el trabajo. Experimentá el diseño cómodo y elegante de este dispositivo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/3.jpg"
+    },
+    {
+    "id": 4,
+    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
+    "price": 6245,
+    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/4.jpg"
+    }
+]
