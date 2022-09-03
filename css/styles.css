@@ -64,7 +64,7 @@
   --bs-body-bg: #fff;
 }
 .darkMode{
-  transition: 1000ms;
+  transition: 500ms;
   background-color: #2c3034;
 }
 *,

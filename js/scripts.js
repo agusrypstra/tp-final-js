@@ -1,18 +1,3 @@
-class Article{
-    constructor(id,name,price,description,type,stock,img){
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.type = type;
-        this.stock = stock;
-        this.img = img;
-    }
-}
-const articles = []
-
-
-
 document.addEventListener('DOMContentLoaded', () =>{
     fetchData()
 })
@@ -20,7 +5,7 @@ const fetchData = async ()=>{
     try {
         const res = await fetch('api.json')
         const data = await res.json()
-        console.log(data);
+        printArticles(data)
     } catch (error) {
         console.log(error);
     }
@@ -37,16 +22,18 @@ if(localStorage.getItem('cart')){
 }
 
 const articleContainer = document.getElementById('articleContainer')
-const templateCard = document.getElementsByClassName("templateCard").content
+const fragment = document.createDocumentFragment();
+const templateCard = document.getElementById("templateCard").content
+
 const printArticles = data =>{
     data.forEach((article)=>{
-        templateCard.querySelector("h5").textContent = article.name
-        templateCard.querySelector("span").textContent = article.price
-        templateCard.querySelector("type").textContent = article.type
-
         const clone = templateCard.cloneNode(true)
-        articleContainer.appendChild(clone)
-        })
+        clone.querySelector('img').src = article.img
+        clone.querySelector('h5').textContent = article.name
+        clone.querySelector('span').textContent = article.price
+        fragment.appendChild(clone)
+    })
+    articleContainer.appendChild(fragment)
 }
 
 const filter = document.getElementById('filter')
@@ -58,30 +45,9 @@ filter.addEventListener('input', ()=>{
     })
     articleContainer.innerHTML = ' '
     orderedArray.forEach((article)=>{
-        articleContainer.innerHTML += `
-            <div class="col mb-5" id="cardArticle${article.id}">
-                <div class="card h-100 d-flex justify-content-between">
-                    <!-- type badge-->
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">${article.type}</div>
-    
-                    <img class="card-img-top" src="img/${article.id}.jpg" alt="..." />
-    
-                    
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">${article.name}</h5>
-                            <!-- Product reviews-->
-                            
-                            <!-- Product price-->
-                            <span class="text-muted text-decoration-line-through">$${article.price}</span>
-                            
-                        </div>
-                    
-                    <button id="addArticle" class="btn btn-secondary" data-id="${article.id}">Add to cart</button>
-                    
-                </div>
-            </div>
-            `
+        
+
+
         })
 })
 

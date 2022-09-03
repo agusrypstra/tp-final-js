@@ -31,5 +31,42 @@
     "type": "accessory",
     "stock": 5,
     "img": "img/4.jpg"
+    },
+    {
+    "id": 5,
+    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
+    "price": 6245,
+    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/5.jpg"
+    },
+    {
+    "id": 6,
+    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
+    "price": 6245,
+    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/6.jpg"
+    },
+    {
+    "id": 7,
+    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
+    "price": 6245,
+    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/7.jpg"
+    },
+    {
+    "id": 8,
+    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
+    "price": 6245,
+    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
+    "type": "accessory",
+    "stock": 5,
+    "img": "img/8.jpg"
     }
+    
 ]
