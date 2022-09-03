@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () =>{
     fetchData()
 })
+let articles = []
 const fetchData = async ()=>{
     try {
         const res = await fetch('api.json')
         const data = await res.json()
+        articles = data
         printArticles(data)
     } catch (error) {
         console.log(error);
@@ -38,17 +40,16 @@ const printArticles = data =>{
 
 const filter = document.getElementById('filter')
 filter.addEventListener('input', ()=>{
-    console.log(filter.value)
-    let orderedArray = []
-    articles.forEach(e =>{
-        orderedArray = articles.filter(article => article.type == filter.value)
+    orderedArray = articles.filter(article => article.type == filter.value)
+    orderedArray.forEach(e =>{
+        const clone = templateCard.cloneNode(true)
+        clone.querySelector('img').src = e.img
+        clone.querySelector('h5').textContent = e.name
+        clone.querySelector('span').textContent = e.price
+        fragment.appendChild(clone)
     })
     articleContainer.innerHTML = ' '
-    orderedArray.forEach((article)=>{
-        
-
-
-        })
+    articleContainer.appendChild(fragment)
 })
 
 //CART
