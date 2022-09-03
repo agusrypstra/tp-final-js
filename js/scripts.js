@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () =>{
     fetchData()
 })
+let cart = {
+
+}
 let articles = []
 const fetchData = async ()=>{
     try {
@@ -19,17 +22,19 @@ if(localStorage.getItem('cart')){
     localStorage.setItem('cart',JSON.stringify(cart))
 }
 
-const articleContainer = document.getElementById('articleContainer')
 const fragment = document.createDocumentFragment();
 const templateCard = document.getElementById("templateCard").content
-const article = document.getElementById("article")
-
+const articleContainer = document.getElementById('articleContainer')
+const templateCart = document.getElementById("templateCart").content
+const cartCard = document.getElementById("cartCard").content
+const cartArticles = templateCart.querySelector("#cartArticles")
 const printArticles = data =>{
     data.forEach((article)=>{
         const clone = templateCard.cloneNode(true)
         clone.querySelector('img').src = article.img
         clone.querySelector('h5').textContent = article.name
         clone.querySelector('span').textContent = article.price
+        clone.querySelector('button').dataset.id = article.id
         fragment.appendChild(clone)
     })
     articleContainer.appendChild(fragment)
@@ -49,147 +54,56 @@ filter.addEventListener('input', ()=>{
 })
 
 //CART
-let cart = {
 
-}
-article.addEventListener('click', (e)=>{
+articleContainer.addEventListener('click', (e)=>{
     addArticle(e)
 })
 const addArticle = e =>{
     if(e.target.classList.contains("btn-secondary")){
-        
+        const item = e.target.parentElement
+        setCart(item)
     }
     e.stopPropagation()
 }
-const buttonsCart = document.querySelectorAll("#addArticle")
-buttonsCart.forEach(btn => {
-    btn.addEventListener('click',(e)=>{
-            const id = e.target.dataset.id
-            if(articles[id-1].stock>0){
+const setCart = e =>{
+    const article = {
+        id: e.querySelector('.btn-secondary').dataset.id,
+        name: e.querySelector("h5").textContent,
+        price: e.querySelector('span').textContent,
+        img: e.querySelector('img').src,
+        amount: 1
+    }
+    
+    if(cart.hasOwnProperty(article.id)){
+        article.amount = cart[article.id].amount + 1
+    }
+    cart[article.id] = {...article}
+    console.log(cart);
+}
 
-                const element = e.target.parentElement
-                const img = element.querySelector("img").src
-                const name = element.querySelector('h5').innerHTML
-                const price = element.querySelector("span").innerHTML
-                addArticle(img,name,price)
-
-                
-                Toastify({
-                    text: "Added to cart",
-                    className: "info",
-                    duration:"2000",
-                    style: {
-                    background: "linear-gradient(to right, #bdc3c7, #2c3e50)",
-                }
-            }).showToast();
-        }else{
-            Toastify({
-                text: "Sorre, we haven't stock of this article",
-                className: "info",
-                duration:"5000",
-                style: {
-                    background: "linear-gradient(to right, #eb3349 , #f45c43)",
-                }
-            }).showToast();
-        }
-        cartLength.innerHTML = cart.length
-    })
-});
-
-document.getElementById("btnCart").addEventListener('click', (e)=>{
+const btnCart = document.getElementById('btnCart')
+btnCart.addEventListener('click', (e)=>{
     e.preventDefault()
-    let html = ` `
-    let total=0
-    for (const key in object) {
-        if (Object.hasOwnProperty.call(object, key)) {
-            const element = object[key];
-            cart.forEach
-        }
-    }(e => {
-        console.log(e)
-        total+=e.price
-        console.log(total)
-        html+=`
-        
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img class="card-img-top" src="img/${e.id}.jpg" alt="${e.name}" />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                    <h5 class="card-title">${e.name}</h5>
-                    <p class="card-text price">$${e.price}</p>
-                
-                    <div class="d-inline-flex p-2">
-                        <button class="btn btn-outline-danger">-</button>
-                        <input type="number" value="1" class="form-control text-center">
-                        <button class="btn btn-outline-success">+</button>
-                    </div>
-                </div>
-            </div>
-        `
-    });
-    Swal.fire({
-        title: "Your cart",
-        html: `<div class="card mb-3" style="max-width: 540px;">
-        ${html}
-        <div><h2>Total: ${total}</h2></div>
-        </div>
-        `,
-        
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Buy cart!',
-        denyButtonText: `Delete cart`,
-        cancelButtonText: 'Close'
-    }).then((result)=>{
-        if(result.isConfirmed){
-            if(cart.length==0){
-                Swal.fire({
-                    title:"Your cart is empty",
-                    icon:"warning"
-                })
-            }else{
-                Swal.fire({
-                    title: 'Buy cart?',
-                    text: "You won't be able to revert this!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Buy',
-                    cancelButtonText: 'No, cancel!',
-                    reverseButtons: true
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire(
-                            'Cart purchased!',
-                            '',
-                            'success'
-                          )
-                    } else if (
-                      /* Read more about handling dismissals below */
-                      result.dismiss === Swal.DismissReason.cancel
-                    ) {
-                      swalWithBootstrapButtons.fire(
-                        'Cancelled',
-                        'Your imaginary file is safe :)',
-                        'error'
-                      )
-                    }
-            })
-            }
-        }else
-        if(result.isDenied){
-            cart = []
-            localStorage.setItem('cart',JSON.stringify(cart))
-            cartLength.innerHTML = cart.length
-            Swal.fire({
-                title:"Your cart is now empty"
-            })
-        }
-    })
+    printCart()
 })
 
-cartLength.innerHTML = cart.length
+const printCart = () =>{
+    Object.values(cart).forEach(art =>{
+        const clone = cartCard.cloneNode(true)
+        clone.querySelector('h5').textContent = art.name
+        clone.querySelector('#itemPrice').textContent = art.price
+        clone.querySelector('p').textContent = art.amount
+        fragment.appendChild(clone)
+    })
+    cartArticles.innerHTML = " "
+    cartArticles.appendChild(fragment)
+
+    Swal.fire({
+        template: '#templateCart'
+    })
+
+    
+}
 
 // DARK MODE
 
