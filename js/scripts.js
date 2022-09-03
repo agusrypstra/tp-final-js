@@ -90,9 +90,10 @@ btnCart.addEventListener('click', (e)=>{
 const printCart = () =>{
     Object.values(cart).forEach(art =>{
         const clone = cartCard.cloneNode(true)
+        clone.querySelector('img').src = art.img
         clone.querySelector('h5').textContent = art.name
         clone.querySelector('#itemPrice').textContent = art.price
-        clone.querySelector('p').textContent = art.amount
+        clone.querySelector('#amount').textContent = art.amount
         fragment.appendChild(clone)
     })
     cartArticles.innerHTML = " "

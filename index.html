@@ -86,14 +86,20 @@
             </div>
         </template>
         <template id="cartCard">
-            <div class="card">
-                <img src="" alt="">
-                <h5 id="itemTitle">Titulo</h5>
-                <button></button>
-                <p>Cantidad</p>
-                <button></button>
-                <p id="itemPrice">Precio</p>
-            </div>
+            <div class="card mb-3" style="max-width: 540px;" id="cartCard">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text" id="itemPrice"></p>
+                      <p class="card-text" id="amount"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </template>
         <template id="templateCart">
             <swal-title>
