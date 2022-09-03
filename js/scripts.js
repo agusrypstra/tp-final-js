@@ -13,10 +13,6 @@ const fetchData = async ()=>{
     }
 }
 
-let cart = {
-
-}
-
 if(localStorage.getItem('cart')){
     cart = JSON.parse(localStorage.getItem('cart'))
 }else{
@@ -26,6 +22,7 @@ if(localStorage.getItem('cart')){
 const articleContainer = document.getElementById('articleContainer')
 const fragment = document.createDocumentFragment();
 const templateCard = document.getElementById("templateCard").content
+const article = document.getElementById("article")
 
 const printArticles = data =>{
     data.forEach((article)=>{
@@ -52,7 +49,18 @@ filter.addEventListener('input', ()=>{
 })
 
 //CART
+let cart = {
 
+}
+article.addEventListener('click', (e)=>{
+    addArticle(e)
+})
+const addArticle = e =>{
+    if(e.target.classList.contains("btn-secondary")){
+        
+    }
+    e.stopPropagation()
+}
 const buttonsCart = document.querySelectorAll("#addArticle")
 buttonsCart.forEach(btn => {
     btn.addEventListener('click',(e)=>{
@@ -87,24 +95,7 @@ buttonsCart.forEach(btn => {
         cartLength.innerHTML = cart.length
     })
 });
-const addArticle = (img,name,price) =>{
-    
-    console.log(img)
-    if(cart.length==0){
-        let articleToAdd = new Article(" ",name,price," "," "," ", img)
-        cart.push(articleToAdd)
-        localStorage.setItem('cart',JSON.stringify(cart))
-    }else{
-        for (let i = 0; i < cart.length; i++) {
-            if(name == cart[i].name){
-                    console.log("El objeto ya esta en el carrito");
-            }else{
 
-            }
-    }
-    }
-
-}
 document.getElementById("btnCart").addEventListener('click', (e)=>{
     e.preventDefault()
     let html = ` `
