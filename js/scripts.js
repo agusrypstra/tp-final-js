@@ -40,16 +40,15 @@ const printArticles = data =>{
 
 const filter = document.getElementById('filter')
 filter.addEventListener('input', ()=>{
-    orderedArray = articles.filter(article => article.type == filter.value)
-    orderedArray.forEach(e =>{
-        const clone = templateCard.cloneNode(true)
-        clone.querySelector('img').src = e.img
-        clone.querySelector('h5').textContent = e.name
-        clone.querySelector('span').textContent = e.price
-        fragment.appendChild(clone)
-    })
+    console.log(filter.value)
+    if(filter.value=='default'){
+        articleContainer.innerHTML = ' '
+        printArticles(articles)
+    }else{
     articleContainer.innerHTML = ' '
-    articleContainer.appendChild(fragment)
+    orderedArray = articles.filter(article => article.type == filter.value)
+    printArticles(orderedArray)
+    }
 })
 
 //CART

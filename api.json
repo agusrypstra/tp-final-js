@@ -34,28 +34,28 @@
     },
     {
     "id": 5,
-    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
-    "price": 6245,
-    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
-    "type": "accessory",
-    "stock": 5,
+    "name": "Auriculares in-ear gamer inalámbricos Haylou GT Series GT1 Pro negro",
+    "price": 4178,
+    "description": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Haylou GT1 Pro no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
+    "type": "audio",
+    "stock": 7,
     "img": "img/5.jpg"
     },
     {
     "id": 6,
-    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
-    "price": 6245,
-    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
-    "type": "accessory",
-    "stock": 5,
+    "name": "Parlante JBL Go 2 portátil con bluetooth deep sea blue",
+    "price": 6899,
+    "description": "El parlante portátil JBL Go 2 tiene todas las funciones que necesitás para llevarlo y usarlo en cualquier lugar. Con el bluetooth vas a tener la facilidad de poner música desde tu smartphone, tablet o computadora. Pero además, tiene una función específica para conferencias telefónicas, que cancela el ruido del ambiente y ofrece un sonido claro y nítido de la voz.",
+    "type": "audio",
+    "stock": 11,
     "img": "img/6.jpg"
     },
     {
     "id": 7,
-    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
-    "price": 6245,
-    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
-    "type": "accessory",
+    "name": "Notebook HP 14-dq2029la plata natural 14, Intel Core i5 1135G7 8GB de RAM 256GB SSD, Intel Iris Xe Graphic G7 80EUs 1366x768px Windows 10 Home",
+    "price": 151999,
+    "description": "La notebook HP 14-dq2029la es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
+    "type": "notebook",
     "stock": 5,
     "img": "img/7.jpg"
     },
@@ -68,5 +68,4 @@
     "stock": 5,
     "img": "img/8.jpg"
     }
-    
 ]
