@@ -79,6 +79,7 @@ const addArticle = e =>{
     if(e.target.classList.contains("btn-secondary")){
         const item = e.target.parentElement
         setCart(item)
+        localStorage.setItem('cart',JSON.stringify(cart))
     }
     e.stopPropagation()
 }
@@ -90,13 +91,13 @@ const setCart = e =>{
         img: e.querySelector('img').src,
         amount: 1
     }
-    
     if(cart.hasOwnProperty(article.id)){
         article.amount = cart[article.id].amount + 1
     }
     cart[article.id] = {...article}
-    
-    console.log(cart);
+    const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
+    const nPrice = Object.values(cart).reduce((acc,{amount, price})=>   acc + amount * price,0)
+    console.log(nPrice);
 }
 
 const btnCart = document.getElementById('btnCart')
@@ -122,7 +123,6 @@ const printCart = () =>{
         })
         cartArticles.innerHTML = " "
         cartArticles.appendChild(fragment)
-    
         Swal.fire({
             template: '#templateCart'
 
