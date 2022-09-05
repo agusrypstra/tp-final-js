@@ -95,6 +95,7 @@ const setCart = e =>{
         article.amount = cart[article.id].amount + 1
     }
     cart[article.id] = {...article}
+    
     console.log(cart);
 }
 
