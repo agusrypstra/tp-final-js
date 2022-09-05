@@ -77,11 +77,19 @@
     "stock": 2
     },
     {
-    "id": 10,
-    "name":"Monitor gamer Samsung F24T35 led 24. Azul y gris oscuro 100V/240V",
-    "price": 45999,
-    "description": "Samsung está fielmente comprometida en brindar productos de calidad y que contribuyan a crear un mejor futuro para las personas. Como empresa líder en la industria tecnológica uno de sus objetivos principales es desarrollar avanzadas e innovadoras soluciones. Es por ello que con este monitor tendrás y disfrutarás de una gran experiencia visual en todo momento.",
+    "id": 11,
+    "name":"Smart Monitor M5 27' FHD con Smart TV Apps y conectividad Wireless",
+    "price": 84999,
+    "description": "La primera pantalla del mundo para hacerlo todo. Conoce la pantalla que realmente hace de todo, estés estudiando, trabajando o relajándote en casa.Trabaja en increíble calidad sin cambiar al portátil o al PC, o disfruta de tu contenido en un televisor con las apps ya preinstaladas, altavoces de serie y mando a distancia.",
     "type": "monitor",
-    "stock": 2
+    "stock": 7
+    },
+    {
+    "id": 12,
+    "name": "Microsoft Xbox Series X 1TB Standard color negro",
+    "price": 199999,
+    "description": "Con tu consola Xbox Series tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.",
+    "type": "console",
+    "stock": 1
     }
 ]
