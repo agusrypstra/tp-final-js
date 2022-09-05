@@ -31,7 +31,7 @@ const cartArticles = templateCart.querySelector("#cartArticles")
 const printArticles = data =>{
     data.forEach((article)=>{
         const clone = templateCard.cloneNode(true)
-        clone.querySelector('img').src = article.img
+        clone.querySelector('img').src = `img/${article.id}.jpg`
         clone.querySelector('h5').textContent = article.name
         clone.querySelector('span').textContent = `$${article.price}`
         clone.querySelector('button').dataset.id = article.id

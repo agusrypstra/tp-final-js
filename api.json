@@ -4,24 +4,21 @@
     "price": 3343,
     "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
     "type": "accessory",
-    "stock": 10,
-    "img": "img/1.jpg"
+    "stock": 10
     },
     {"id": 2,
     "name": "Logitech G Series Lightsync G203 blanco",
     "price": 3459,
     "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
     "type": "accessory",
-    "stock": 8,
-    "img": "img/2.jpg"
+    "stock": 8
     },
     {"id": 3,
     "name": "Redragon Griffin M607 negro",
     "price": 3466,
     "description": "Con más de 20 años de experiencia en fabricación de productos, Redragon innova día a día en diseño y calidad. Su objetivo es producir equipamiento de alta gama para jugadores, con excelentes prestaciones y a un precio accesible. Los mouses Redragon son adecuados para todas las ocasiones, ya sea para entretenerse en el hogar o usarlo en el trabajo. Experimentá el diseño cómodo y elegante de este dispositivo.",
     "type": "accessory",
-    "stock": 5,
-    "img": "img/3.jpg"
+    "stock": 5
     },
     {
     "id": 4,
@@ -29,8 +26,7 @@
     "price": 6245,
     "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
     "type": "accessory",
-    "stock": 5,
-    "img": "img/4.jpg"
+    "stock": 5
     },
     {
     "id": 5,
@@ -38,8 +34,7 @@
     "price": 4178,
     "description": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Haylou GT1 Pro no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
     "type": "audio",
-    "stock": 7,
-    "img": "img/5.jpg"
+    "stock": 7
     },
     {
     "id": 6,
@@ -47,8 +42,7 @@
     "price": 6899,
     "description": "El parlante portátil JBL Go 2 tiene todas las funciones que necesitás para llevarlo y usarlo en cualquier lugar. Con el bluetooth vas a tener la facilidad de poner música desde tu smartphone, tablet o computadora. Pero además, tiene una función específica para conferencias telefónicas, que cancela el ruido del ambiente y ofrece un sonido claro y nítido de la voz.",
     "type": "audio",
-    "stock": 11,
-    "img": "img/6.jpg"
+    "stock": 11
     },
     {
     "id": 7,
@@ -56,16 +50,38 @@
     "price": 151999,
     "description": "La notebook HP 14-dq2029la es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
     "type": "notebook",
-    "stock": 5,
-    "img": "img/7.jpg"
+    "stock": 5
     },
     {
     "id": 8,
-    "name": "Teclado bluetooth Logitech K380 QWERTY español color negro",
-    "price": 6245,
-    "description": "Innovadores en diseño y tecnología, Logitech se encarga de brindar la mejor experiencia de uso para sus usuarios. Sus teclados resaltan por ser resistentes y muy de buena calidad, por lo que podrás disfrutarlos por un largo tiempo.",
-    "type": "accessory",
-    "stock": 5,
-    "img": "img/8.jpg"
+    "name": "Notebook Lenovo IdeaPad",
+    "price": 124167,
+    "description": "La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.",
+    "type": "notebook",
+    "stock": 5
+    },
+    {
+    "id": 9,
+    "name": "Konka Indus Dual SIM 32 GB negro 3 GB RAM",
+    "price": 30679,
+    "description": "Momentos únicos, capturas reales. Capturá tus mejores momentos y revivilos cuando quieras con la cámara trasera de 13 Mpx.",
+    "type": "phone",
+    "stock": 7
+    },
+    {
+    "id": 10,
+    "name":"Monitor gamer Samsung F24T35 led 24. Azul y gris oscuro 100V/240V",
+    "price": 45999,
+    "description": "Samsung está fielmente comprometida en brindar productos de calidad y que contribuyan a crear un mejor futuro para las personas. Como empresa líder en la industria tecnológica uno de sus objetivos principales es desarrollar avanzadas e innovadoras soluciones. Es por ello que con este monitor tendrás y disfrutarás de una gran experiencia visual en todo momento.",
+    "type": "monitor",
+    "stock": 2
+    },
+    {
+    "id": 10,
+    "name":"Monitor gamer Samsung F24T35 led 24. Azul y gris oscuro 100V/240V",
+    "price": 45999,
+    "description": "Samsung está fielmente comprometida en brindar productos de calidad y que contribuyan a crear un mejor futuro para las personas. Como empresa líder en la industria tecnológica uno de sus objetivos principales es desarrollar avanzadas e innovadoras soluciones. Es por ello que con este monitor tendrás y disfrutarás de una gran experiencia visual en todo momento.",
+    "type": "monitor",
+    "stock": 2
     }
 ]
