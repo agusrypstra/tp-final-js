@@ -1,6 +1,6 @@
 [
     {"id": 1,
-    "name": "Mouse de juego Logitech G Series Lightsync G203 azul",
+    "name": "Logitech G Series Lightsync G203 azul",
     "price": 3343,
     "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
     "type": "accessory",
@@ -8,7 +8,7 @@
     "img": "img/1.jpg"
     },
     {"id": 2,
-    "name": "Mouse de juego Logitech G Series Lightsync G203 blanco",
+    "name": "Logitech G Series Lightsync G203 blanco",
     "price": 3459,
     "description": "Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.",
     "type": "accessory",
@@ -16,7 +16,7 @@
     "img": "img/2.jpg"
     },
     {"id": 3,
-    "name": "Mouse de juego Redragon Griffin M607 negro",
+    "name": "Redragon Griffin M607 negro",
     "price": 3466,
     "description": "Con más de 20 años de experiencia en fabricación de productos, Redragon innova día a día en diseño y calidad. Su objetivo es producir equipamiento de alta gama para jugadores, con excelentes prestaciones y a un precio accesible. Los mouses Redragon son adecuados para todas las ocasiones, ya sea para entretenerse en el hogar o usarlo en el trabajo. Experimentá el diseño cómodo y elegante de este dispositivo.",
     "type": "accessory",
@@ -52,7 +52,7 @@
     },
     {
     "id": 7,
-    "name": "Notebook HP 14-dq2029la plata natural 14, Intel Core i5 1135G7 8GB de RAM 256GB SSD, Intel Iris Xe Graphic G7 80EUs 1366x768px Windows 10 Home",
+    "name": "Notebook HP 14, Intel Core i5 1135G7 8GB de RAM 256GB SSD",
     "price": 151999,
     "description": "La notebook HP 14-dq2029la es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
     "type": "notebook",

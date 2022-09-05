@@ -33,7 +33,7 @@ const printArticles = data =>{
         const clone = templateCard.cloneNode(true)
         clone.querySelector('img').src = article.img
         clone.querySelector('h5').textContent = article.name
-        clone.querySelector('span').textContent = article.price
+        clone.querySelector('span').textContent = `$${article.price}`
         clone.querySelector('button').dataset.id = article.id
         fragment.appendChild(clone)
     })
@@ -57,7 +57,24 @@ filter.addEventListener('input', ()=>{
 
 articleContainer.addEventListener('click', (e)=>{
     addArticle(e)
+    showMessage(e)
 })
+const showMessage = e =>{
+    const nameArticle = e.target.parentElement.querySelector('h5').textContent
+    if (e.target.classList.contains("btn-secondary")) {
+        Toastify({
+            text: `${nameArticle} added to cart`,
+            duration: 2500,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #bdc3c7, #2c3e50   )",
+            }
+          }).showToast();
+    }
+    
+}
 const addArticle = e =>{
     if(e.target.classList.contains("btn-secondary")){
         const item = e.target.parentElement
@@ -88,21 +105,35 @@ btnCart.addEventListener('click', (e)=>{
 })
 
 const printCart = () =>{
-    Object.values(cart).forEach(art =>{
-        const clone = cartCard.cloneNode(true)
-        clone.querySelector('img').src = art.img
-        clone.querySelector('h5').textContent = art.name
-        clone.querySelector('#itemPrice').textContent = art.price
-        clone.querySelector('#amount').textContent = art.amount
-        fragment.appendChild(clone)
-    })
-    cartArticles.innerHTML = " "
-    cartArticles.appendChild(fragment)
+    if(Object.entries(cart).length === 0){
+        Swal.fire({
+            title: "Your cart is empty",
+            icon: "info"
+        })
+    }else{
+        Object.values(cart).forEach(art =>{
+            const clone = cartCard.cloneNode(true)
+            clone.querySelector('img').src = art.img
+            clone.querySelector('h5').textContent = art.name
+            clone.querySelector('#itemPrice').textContent = `${art.price}`
+            clone.querySelector('#amount').textContent = `Cantidad: ${art.amount}`
+            fragment.appendChild(clone)
+        })
+        cartArticles.innerHTML = " "
+        cartArticles.appendChild(fragment)
+    
+        Swal.fire({
+            template: '#templateCart'
 
-    Swal.fire({
-        template: '#templateCart'
-    })
-
+        }).then((result) =>{
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Successfully purchased cart"
+                })
+            }
+        })
+    
+    }
     
 }
 

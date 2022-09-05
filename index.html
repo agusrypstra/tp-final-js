@@ -49,17 +49,20 @@
             </div>
         </header>
         <nav class="navbar navbar-expand-lg bg-light">
-            <select class="form-select" aria-label="Default select example" id="filter">
-                <option selected value="default">Open this select menu</option>
-                <option value="audio">Audio</option>
-                <option value="accessory">PC Accesories</option>
-                <option value="notebook">Notebooks</option>
-              </select>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div class="col">
 
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <select class="form-select" aria-label="Default select example" id="filter">
+                    <option selected value="default">Open this select menu</option>
+                    <option value="audio">Audio</option>
+                    <option value="accessory">PC Accesories</option>
+                    <option value="notebook">Notebooks</option>
+                </select>
+            </div>
         </nav>
         <!-- Section-->
         <section class="py-5">
@@ -111,13 +114,13 @@
                 </div>
             </swal-html>
             <swal-button type="confirm">
-              Save As
+              Buy cart
             </swal-button>
             <swal-button type="cancel">
-              Cancel
+              Close
             </swal-button>
             <swal-button type="deny">
-              Close without Saving
+              Delete my cart
             </swal-button>
             <swal-param name="allowEscapeKey" value="false" />
             <swal-param
