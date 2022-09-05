@@ -66,7 +66,7 @@ const showMessage = e =>{
             text: `${nameArticle} added to cart`,
             duration: 2500,
             gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
+            position: "left", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
               background: "linear-gradient(to right, #bdc3c7, #2c3e50   )",
@@ -129,6 +129,17 @@ const printCart = () =>{
             if (result.isConfirmed) {
                 Swal.fire({
                     title: "Successfully purchased cart"
+                })
+            }
+            if(result.isDenied){
+                Swal.fire({
+                    title:"Are you sure you want to clean your cart?",
+                    template: "#templateConfirmation"
+                }).then((result) =>{
+                    if (result.isConfirmed) {
+                        cart = {}
+                        localStorage.setItem('cart',JSON.stringify(cart))
+                    }
                 })
             }
         })
