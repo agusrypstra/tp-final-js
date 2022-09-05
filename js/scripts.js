@@ -33,7 +33,7 @@ const printArticles = data =>{
         const clone = templateCard.cloneNode(true)
         clone.querySelector('img').src = `img/${article.id}.jpg`
         clone.querySelector('h5').textContent = article.name
-        clone.querySelector('span').textContent = `$${article.price}`
+        clone.querySelector('span').textContent = article.price
         clone.querySelector('button').dataset.id = article.id
         fragment.appendChild(clone)
     })
@@ -81,8 +81,10 @@ const addArticle = e =>{
         setCart(item)
         localStorage.setItem('cart',JSON.stringify(cart))
     }
+    
     e.stopPropagation()
 }
+
 const setCart = e =>{
     const article = {
         id: e.querySelector('.btn-secondary').dataset.id,
@@ -91,13 +93,14 @@ const setCart = e =>{
         img: e.querySelector('img').src,
         amount: 1
     }
+    console.log(article.price);
     if(cart.hasOwnProperty(article.id)){
         article.amount = cart[article.id].amount + 1
     }
     cart[article.id] = {...article}
     const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
-    const nPrice = Object.values(cart).reduce((acc,{amount, price})=>   acc + amount * price,0)
-    console.log(nPrice);
+    const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
+    templateCart.getElementById('totalCart').textContent = nPrice
 }
 
 const btnCart = document.getElementById('btnCart')
@@ -121,6 +124,7 @@ const printCart = () =>{
             clone.querySelector('#amount').textContent = `Cantidad: ${art.amount}`
             fragment.appendChild(clone)
         })
+        
         cartArticles.innerHTML = " "
         cartArticles.appendChild(fragment)
         Swal.fire({
