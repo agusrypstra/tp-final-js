@@ -86,7 +86,7 @@
                 <img class="card-img-top" src="img/${article.id}.jpg" alt="..." id="articleImg"/>
                 <div class="text-center">
                     <h5 class="fw-bolder" id="articleName"></h5>
-                    <span class="text-bold" id="articlePrice">$</span>
+                    <p>$<span class="text-bold" id="articlePrice"></span></p>
                 </div>
                 <button id="addArticle" class="btn btn-secondary" data-id="">Add to cart</button>
             </div>
@@ -100,8 +100,20 @@
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title"></h5>
-                      <p class="card-text" id="itemPrice"></p>
-                      <p class="card-text" id="amount"></p>
+                      <p>$<span class="card-text" id="itemPrice"></span></p>
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-danger">-</button>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text" id="amount"></p>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success">+</button>
+                            </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -116,7 +128,7 @@
                     
                 </div>
                 <div class="conteiner">
-                    Total: <span id="totalCart"></span>
+                    Total: $<span id="totalCart"></span>
                 </div>
             </swal-html>
             <swal-button type="confirm">

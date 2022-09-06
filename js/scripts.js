@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', () =>{
     fetchData()
+    if(localStorage.getItem('cart')){
+        cart = JSON.parse(localStorage.getItem('cart'))
+    }else{
+        localStorage.setItem('cart',JSON.stringify(cart))
+    }
 })
-let cart = {
 
-}
+let cart = {}
 let articles = []
 const fetchData = async ()=>{
     try {
@@ -15,19 +19,13 @@ const fetchData = async ()=>{
         console.log(error);
     }
 }
-
-if(localStorage.getItem('cart')){
-    cart = JSON.parse(localStorage.getItem('cart'))
-}else{
-    localStorage.setItem('cart',JSON.stringify(cart))
-}
-
 const fragment = document.createDocumentFragment();
 const templateCard = document.getElementById("templateCard").content
 const articleContainer = document.getElementById('articleContainer')
 const templateCart = document.getElementById("templateCart").content
 const cartCard = document.getElementById("cartCard").content
 const cartArticles = templateCart.querySelector("#cartArticles")
+
 const printArticles = data =>{
     data.forEach((article)=>{
         const clone = templateCard.cloneNode(true)
@@ -39,7 +37,6 @@ const printArticles = data =>{
     })
     articleContainer.appendChild(fragment)
 }
-
 const filter = document.getElementById('filter')
 filter.addEventListener('input', ()=>{
     console.log(filter.value)
@@ -54,7 +51,6 @@ filter.addEventListener('input', ()=>{
 })
 
 //CART
-
 articleContainer.addEventListener('click', (e)=>{
     addArticle(e)
     showMessage(e)
@@ -98,14 +94,14 @@ const setCart = e =>{
         article.amount = cart[article.id].amount + 1
     }
     cart[article.id] = {...article}
-    const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
-    const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
-    templateCart.getElementById('totalCart').textContent = nPrice
 }
 
 const btnCart = document.getElementById('btnCart')
 btnCart.addEventListener('click', (e)=>{
     e.preventDefault()
+    const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
+    const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
+    templateCart.getElementById('totalCart').textContent = nPrice
     printCart()
 })
 
@@ -120,8 +116,8 @@ const printCart = () =>{
             const clone = cartCard.cloneNode(true)
             clone.querySelector('img').src = art.img
             clone.querySelector('h5').textContent = art.name
-            clone.querySelector('#itemPrice').textContent = `${art.price}`
-            clone.querySelector('#amount').textContent = `Cantidad: ${art.amount}`
+            clone.querySelector('#itemPrice').textContent = art.price
+            clone.querySelector('#amount').textContent = art.amount
             fragment.appendChild(clone)
         })
         
