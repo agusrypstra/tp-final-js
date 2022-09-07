@@ -103,8 +103,8 @@ btnCart.addEventListener('click', (e)=>{
     const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
     templateCart.getElementById('totalCart').textContent = nPrice
     printCart()
+    
 })
-
 const printCart = () =>{
     if(Object.entries(cart).length === 0){
         Swal.fire({
@@ -118,9 +118,10 @@ const printCart = () =>{
             clone.querySelector('h5').textContent = art.name
             clone.querySelector('#itemPrice').textContent = art.price
             clone.querySelector('#amount').textContent = art.amount
+            clone.querySelector('.btn-danger').dataset.id = art.id
+            clone.querySelector('.btn-success').dataset.id = art.id
             fragment.appendChild(clone)
         })
-        
         cartArticles.innerHTML = " "
         cartArticles.appendChild(fragment)
         Swal.fire({
@@ -144,11 +145,8 @@ const printCart = () =>{
                 })
             }
         })
-    
     }
-    
 }
-
 // DARK MODE
 
 let darkMode
