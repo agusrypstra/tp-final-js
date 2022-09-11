@@ -26,6 +26,7 @@ const templateCart = document.getElementById("templateCart").content
 const cartCard = document.getElementById("cartCard").content
 const cartArticles = templateCart.querySelector("#cartArticles")
 
+
 const printArticles = data =>{
     data.forEach((article)=>{
         const clone = templateCard.cloneNode(true)
@@ -55,6 +56,7 @@ articleContainer.addEventListener('click', (e)=>{
     addArticle(e)
     showMessage(e)
 })
+
 const showMessage = e =>{
     const nameArticle = e.target.parentElement.querySelector('h5').textContent
     if (e.target.classList.contains("btn-secondary")) {
@@ -103,7 +105,30 @@ btnCart.addEventListener('click', (e)=>{
     const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
     templateCart.getElementById('totalCart').textContent = nPrice
     printCart()
-    
+})
+btnCart.addEventListener('click', () =>{
+    const swal2 = document.querySelector('.swal2-html-container')
+    swal2.addEventListener('click', e=>{
+        const id = e.target.dataset.id
+    if (e.target.classList.contains("btn-danger")) {
+        if(cart[id].amount > 1){
+            cart[id].amount = cart[id].amount - 1
+            e.target.parentElement.parentElement.querySelector('p').textContent = cart[id].amount
+            localStorage.setItem('cart',JSON.stringify(cart))
+            if (condition) {
+                object
+            }
+        }else{
+            Object.values(cart).splice(id, 1)
+            localStorage.setItem('cart',JSON.stringify(cart))
+            console.log(cart);
+        }
+    }else if(e.target.classList.contains("btn-success")){
+        cart[id].amount = cart[id].amount + 1
+        e.target.parentElement.parentElement.querySelector('p').textContent = cart[id].amount
+        localStorage.setItem('cart',JSON.stringify(cart))
+    }
+})
 })
 const printCart = () =>{
     if(Object.entries(cart).length === 0){
@@ -147,6 +172,15 @@ const printCart = () =>{
         })
     }
 }
+
+cartArticles.addEventListener('click', (e)=>{
+    if (e.target.classList.contains("btn-conteiner")) {
+        console.log("object");
+    }
+    else{
+        console.log("object");
+    }
+})
 // DARK MODE
 
 let darkMode
