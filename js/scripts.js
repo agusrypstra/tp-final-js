@@ -101,33 +101,38 @@ const setCart = e =>{
 const btnCart = document.getElementById('btnCart')
 btnCart.addEventListener('click', (e)=>{
     e.preventDefault()
-    const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
-    const nPrice = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
-    templateCart.getElementById('totalCart').textContent = nPrice
+    printTotal()
     printCart()
 })
+let total = 0
+const printTotal = () =>{
+    const nAmount = Object.values(cart).reduce((acc,{amount}) =>    acc + amount,0)
+    total = Object.values(cart).reduce((acc,{amount, price}) =>   acc + amount * price,0)
+    templateCart.getElementById('totalCart').textContent = total
+}
 btnCart.addEventListener('click', () =>{
-    const swal2 = document.querySelector('.swal2-html-container')
+    const swal2 = document.querySelector('.swal2-container')
     swal2.addEventListener('click', e=>{
         const id = e.target.dataset.id
+        const amountDiv = e.target.parentElement.parentElement
     if (e.target.classList.contains("btn-danger")) {
-        if(cart[id].amount > 1){
-            cart[id].amount = cart[id].amount - 1
-            e.target.parentElement.parentElement.querySelector('p').textContent = cart[id].amount
-            localStorage.setItem('cart',JSON.stringify(cart))
-            if (condition) {
-                object
-            }
-        }else{
-            Object.values(cart).splice(id, 1)
-            localStorage.setItem('cart',JSON.stringify(cart))
-            console.log(cart);
+        cart[id].amount = cart[id].amount -1
+        amountDiv.querySelector('p').textContent = cart[id].amount
+        if(cart[id].amount === 0){
+            delete cart[id]
+            e.path[8].removeChild(e.path[7])
         }
-    }else if(e.target.classList.contains("btn-success")){
-        cart[id].amount = cart[id].amount + 1
-        e.target.parentElement.parentElement.querySelector('p').textContent = cart[id].amount
-        localStorage.setItem('cart',JSON.stringify(cart))
+        printTotal()
+        e.path[9].querySelector('#totalCart').textContent = total
+    
     }
+    if(e.target.classList.contains("btn-success")){
+        cart[id].amount = cart[id].amount + 1
+        amountDiv.querySelector('p').textContent = cart[id].amount
+        printTotal()
+        e.path[9].querySelector('#totalCart').textContent = total
+    }
+    localStorage.setItem('cart',JSON.stringify(cart))
 })
 })
 const printCart = () =>{
@@ -151,7 +156,6 @@ const printCart = () =>{
         cartArticles.appendChild(fragment)
         Swal.fire({
             template: '#templateCart'
-
         }).then((result) =>{
             if (result.isConfirmed) {
                 Swal.fire({
